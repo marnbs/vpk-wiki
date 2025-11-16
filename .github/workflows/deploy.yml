@@ -1,0 +1,59 @@
+# deploy.yml
+
+name: Deploy Hugo Site to Pages
+
+on:
+  # Запускаем при любом пуше в ветку 'main'
+  push:
+    branches:
+      - main
+
+  # Позволяет запускать этот воркфлоу вручную со страницы Actions
+  workflow_dispatch:
+
+# Устанавливаем права для GITHUB_TOKEN, чтобы разрешить деплой
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Запрещаем одновременный запуск двух сборок
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Загружаем твой код из репозитория
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Очень важный шаг: загружаем тему (сабмодуль)
+          submodules: 'recursive'
+          fetch-depth: 0
+
+      # 2. Устанавливаем Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest' # Используем последнюю версию Hugo
+          extended: true         # Устанавливаем extended-версию (нужна для Sass и др.)
+
+      # 3. Собираем сайт
+      - name: Build
+        run: hugo --minify
+        # 'hugo --minify' собирает твой сайт в папку /public
+
+      # 4. Загружаем артефакт (собранный сайт) для GitHub Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Загружаем содержимое папки /public
+          path: ./public
+
+      # 5. Деплоим на GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
