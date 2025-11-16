@@ -11,3 +11,6 @@ BookLogo = '/logo.png'
 BookFavicon = '/favicon.png'
 BookMenuBundle = true
 author = "ВПК Комбат"
+[languages.ru]
+title = "Вики Комбат"
+weight = 1

@@ -1,0 +1,23 @@
+- id: bookSearch
+  translation: "Поиск"
+
+- id: bookMenu
+  translation: "Меню"
+
+- id: bookPrevious
+  translation: "Назад"
+
+- id: bookNext
+  translation: "Вперед"
+
+- id: bookSeeAlso
+  translation: "Смотрите также"
+
+- id: bookBackToTop
+  translation: "Вернуться к началу"
+
+- id: bookEditThisPage
+  translation: "Редактировать страницу"
+
+- id: bookReportAnIssue
+  translation: "Сообщить о проблеме" 
