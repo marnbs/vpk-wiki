@@ -1,0 +1,7 @@
+baseURL = "/"
+languageCode = "ru"
+title = "База знаний ВПК Комбат"
+theme = "hugo-book"
+
+[params]
+  BookSection = "docs"

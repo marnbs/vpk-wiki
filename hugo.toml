@@ -1,0 +1,13 @@
+baseURL = 'https://xn--b1amah.xn--80abc6aamnf7a.xn--p1ai/'
+languageCode = 'ru-ru'
+title = 'Вики ВПК Комбат'
+theme = 'hugo-book'
+
+[params]
+BookSection = 'docs'
+BookShowToC = true
+BookSearch = true
+BookLogo = '/logo.png'
+BookFavicon = '/favicon.png'
+BookMenuBundle = true
+author = "ВПК Комбат"
