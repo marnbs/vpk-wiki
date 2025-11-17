@@ -1,0 +1,47 @@
+<nav class="kb-breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ "/" | relURL }}">Главная</a></li>
+
+    {{/* Вывод разделов, если есть */}}
+    {{ $p := . }}
+    {{ range .Ancestors.Reverse }}
+      {{ if and (not .IsHome) (ne .RelPermalink "/") }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+
+    {{/* Текущая страница */}}
+    <li class="active">{{ .Title }}</li>
+  </ol>
+</nav>
+
+<style>
+.kb-breadcrumbs {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+.kb-breadcrumbs ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.kb-breadcrumbs li::after {
+  content: "›";
+  margin-left: .4rem;
+  opacity: .5;
+}
+.kb-breadcrumbs li.active::after {
+  content: "";
+}
+.kb-breadcrumbs a {
+  text-decoration: none;
+  color: inherit;
+}
+.kb-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+</style>

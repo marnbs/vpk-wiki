@@ -2,15 +2,41 @@ baseURL = 'https://xn--b1amah.xn--80abc6aamnf7a.xn--p1ai/'
 languageCode = 'ru-ru'
 title = 'Вики ВПК Комбат'
 theme = 'hugo-book'
+enableGitInfo = true
+
 
 [params]
 BookSection = 'docs'
+yandexMetricaID = "ВАШ_ID_СЧЕТЧИКА"
+BookShowTopMenu = true
 BookShowToC = true
 BookSearch = true
 BookLogo = '/logo.png'
 BookFavicon = '/favicon.png'
 BookMenuBundle = true
-author = "ВПК Комбат"
+defaultAuthor = "ВПК Комбат"
+description = "Официальная вики военно-патриотического клуба «Комбат». Статьи по тактике, первой помощи, гражданской обороне, радиодисциплине."
+keywords = "ВПК Комбат, военная подготовка, тактика, первая помощь, гражданская оборона, радиосвязь"
+og_image = "/logo.png"
 [languages.ru]
-title = "Вики Комбат"
+title = "Комбат-Вики"
 weight = 1
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
+[contentbasename]
+docs = "/:sections/:filename/"
+[[menu.main]]
+name = "Новости"
+url = "/posts/"
+weight = 20
+[[menu.after]]
+name = "Новости Комбат-Вики"
+url = "/posts/"
+weight = 10
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true

@@ -1,7 +1,6 @@
 ---
-title: "Test"
-weight: 2
-show_pdf_button: true
+title: "Тактика"
+weight: 1
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
@@ -11,4 +10,3 @@ show_pdf_button: true
 # bookHref: ''
 # bookIcon: ''
 ---
-парпа

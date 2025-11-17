@@ -1,5 +1,5 @@
 ---
-title: "Учебные файлы"
+title: "Радиодисциплина"
 weight: 1
 # bookFlatSection: false
 # bookToc: true
@@ -10,4 +10,3 @@ weight: 1
 # bookHref: ''
 # bookIcon: ''
 ---
-Добро пожаловать в базу знаний ВПК "Комбат"

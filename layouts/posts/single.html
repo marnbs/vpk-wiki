@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+  {{ partial "breadcrumbs.html" . }}
+
+  <h1>{{ .Title }}</h1>
+
+  <div class="meta-bar" style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
+      {{ partial "pdf-button.html" . }}
+
+      <div style="font-size: 0.9rem; color: #666; display:flex; gap:14px;">
+          <span>Автор: {{ with .Params.author }}{{ . }}{{ else }}{{ site.Params.defaultAuthor }}{{ end }}</span>
+          <span>Дата: {{ .Lastmod.Format "02.01.2006" }}</span>
+      </div>
+  </div>
+
+  <hr style="margin: 12px 0;">
+
+  <article class="markdown book-article">
+    {{ .Content }}
+  </article>
+
+{{ end }}

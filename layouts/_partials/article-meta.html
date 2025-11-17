@@ -1,0 +1,14 @@
+{{ $author := .Params.author | default site.Params.defaultAuthor }}
+{{ $date := .Date }}
+{{ $lastmod := .Lastmod }}
+
+<div class="article-meta" style="margin:0.2rem 0 0.4rem 0; color:#666; font-size:0.8rem;">
+  <span>Автор: {{ $author }}</span>
+  <span style="margin:0 3px;">•</span>
+  <span>Последнее изменение {{ $date.Format "02.01.2006" }}</span>
+
+  {{ if ne $date $lastmod }}
+  <span style="margin:0 3px;">•</span>
+  <span>🔄 {{ $lastmod.Format "02.01.2006" }}</span>
+  {{ end }}
+</div>

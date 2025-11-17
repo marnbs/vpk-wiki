@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<h1>Новости</h1>
+<hr>
+
+<ul class="blog-list">
+  {{ range .Pages.ByDate.Reverse }}
+    <li style="margin-bottom: 18px;">
+      <a href="{{ .RelPermalink }}" style="font-size:1.1rem; font-weight:600;">
+        {{ .Title }}
+      </a>
+      <div style="color:#666; font-size:0.85rem;">
+        {{ .Date.Format "02.01.2006" }}
+      </div>
+      {{ with .Params.description }}
+        <p style="margin:4px 0 0; color:#555;">{{ . }}</p>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>
+
+{{ end }}
