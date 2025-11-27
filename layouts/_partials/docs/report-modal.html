@@ -1,0 +1,80 @@
+<!-- layouts/partials/docs/report-modal.html -->
+
+<div id="report-popup" style="
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  background: var(--body-bg, #fff);
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  width: 280px;
+  font-family: inherit;
+">
+
+  <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem;">
+    Сообщить об ошибке
+  </h4>
+
+  <p style="font-size: 0.9em; margin: 0 0 0.25rem 0;">
+    Выделено:
+  </p>
+
+  <blockquote id="report-popup-selection" style="
+    margin: 0 0 0.75rem 0;
+    padding: 0.4rem 0.6rem;
+    border-left: 3px solid #888;
+    font-size: 0.85em;
+    background: rgba(0,0,0,0.03);
+    white-space: pre-wrap;
+  "></blockquote>
+
+  <textarea id="report-popup-comment" rows="3" placeholder="Опишите проблему…" style="
+      width: 100%;
+      font-size: 0.85em;
+      resize: vertical;
+      margin-bottom: 0.5rem;
+  "></textarea>
+
+  <input id="report-popup-email" type="email" placeholder="Email (необязательно)" style="
+      width: 100%;
+      font-size: 0.85em;
+      margin-bottom: 0.5rem;
+  " />
+
+  <div id="report-popup-status" style="
+      font-size: 0.8em;
+      margin-bottom: 0.5rem;
+      display: none;
+  "></div>
+
+  <div style="display: flex; justify-content: flex-end; gap: 0.3rem;">
+    <button id="report-popup-cancel" style="
+      padding: 0.3rem 0.6rem; font-size: 0.85em;
+    ">Отмена</button>
+
+    <button id="report-popup-send" style="
+      padding: 0.3rem 0.6rem; font-size: 0.85em;
+      background: #007bff; color: #fff; border: none; border-radius: 4px;
+    ">Отправить</button>
+  </div>
+
+</div>
+
+<button id="report-floating-button" style="
+  display: none;
+  position: absolute;
+  z-index: 9997;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8em;
+  border-radius: 4px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+">
+  Сообщить
+</button>
