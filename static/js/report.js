@@ -1,7 +1,7 @@
 // static/js/report.js
 
 (function () {
-  const workerUrl = "https://github-wiki.vpkkombatmarn.workers.dev";
+  const workerUrl = "https://github-wiki.vpkkombatmarn.workers.dev/";
 
   let floatingBtn, popup;
 
